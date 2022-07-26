@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { EmployeeModule } from './employee/employee.module';
 import { HomeModule } from './home/home.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     AppRoutingModule,
     HomeModule,
     EmployeeModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

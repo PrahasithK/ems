@@ -8,7 +8,12 @@ import { Employee, EmployeeDataService } from '../employee-data.service';
   styleUrls: ['./emp-list.component.css']
 })
 export class EmpListComponent implements OnInit {
-  _router: any;
+  //a
+  // id:string="";
+  // firstName:string="";
+  // lastName:string="";
+  // age:string="";
+  // _router: any;
   
   constructor(
     private empDataService: EmployeeDataService,
@@ -21,15 +26,25 @@ export class EmpListComponent implements OnInit {
   ngOnInit(): void {
     this.empList = this.empDataService.getEmployeeList();
   }
-  edit(values:Employee){
+  edit(employee:Employee){
     //edit
-   
-
-    localStorage.setItem("empLists", JSON.stringify(values));
-    console.log(values);
-    // console.log(empLists);
+    // localStorage.setItem("empLists", JSON.stringify(values));
+    // console.log(values.id);
+    // let editData=JSON.parse(JSON.stringify(localStorage.getItem("empLists")));
+    // for (const [key, value] of Object.entries(editData)) {
+  
+    //   console.log(`${key}: ${value}`);
+    // }
+    // console.log(editData.get("id"));
     
-    this.router.navigate(['/employee/add-users'])
+    // this.id=values.id;
+    // this.firstName=values.firstName;
+    // this.lastName=values.lastName;
+    // this.age=values.age;
+    // console.log(empLists);
+    console.log(employee)
+    
+    this.router.navigate(['/employee/add-users'],{queryParams:employee})
 
   }
  

@@ -1,17 +1,23 @@
-<div class="p-3">
+
+<div class="form-group">
     <h1>Add User</h1>
     <label for="Id" class="col-2">Indentification number</label>
-    <input name="Id" type="text" #id> <br><p *ngIf="id.value===''" class="ErrorMsg">Id is Required</p>
+    <input name="Id" type="text" class="form-control" #idField [(ngModel)]="employee.id"> <br>
+    <p *ngIf="idField.value===''" class="ErrorMsg">Id is Required</p>
     <label for="FirstName" class="col-2">FirstName</label>
-    <input name="FirstName" #firstName><br><p *ngIf="firstName.value===''" class="ErrorMsg">firstName is Required</p>
+    <input name="FirstName" class="form-control" #firstNameField [(ngModel)]="employee.firstName"><br>
+    <p *ngIf="firstNameField.value===''" class="ErrorMsg">firstName is Required</p>
     <label for="lastName" class="col-2">lastName</label>
-    <input name="lastName" #lastName><br><p *ngIf="lastName.value===''" class="ErrorMsg">lastName is Required</p>
+    <input name="lastName" class="form-control" #lastNameField [(ngModel)]="employee.lastName"><br>
+    <p *ngIf="lastNameField.value===''" class="ErrorMsg">lastName is Required</p>
     <label for="Age" class="col-2">Age</label>
-    <input name="Age" #age><br><p *ngIf="age.value===''" class="ErrorMsg">Age is Required</p>
+    <input name="Age" class="form-control" #ageField [(ngModel)]="employee.age"><br>
+    <p *ngIf="ageField.value===''" class="ErrorMsg">Age is Required</p>
     <div>
-    <button class="btn btn-primary" (click)="submit({id: id.value, firstName: firstName.value, lastName: lastName.value, age: age.value })">Submit</button>  
-</div>
-<div>
-    <button class="btn btn-primary mt-3" routerLink="/employee">Back</button>
-</div>
+        <button class="btn btn-primary"
+            (click)="submit({id: idField.value, firstName: firstNameField.value, lastName: lastNameField.value, age: ageField.value })">Submit</button>
+    </div>
+    <div>
+        <button class="btn btn-primary mt-3" routerLink="/employee">Back</button>
+    </div>
 </div>

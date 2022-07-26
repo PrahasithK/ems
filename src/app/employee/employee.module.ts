@@ -5,7 +5,7 @@ import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmpListComponent } from './emp-list/emp-list.component';
 import { AddUsersComponent } from './add-users/add-users.component';
 import { EmployeeDataService } from './employee-data.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers:[
     EmployeeDataService
