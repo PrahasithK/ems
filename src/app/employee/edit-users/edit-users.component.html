@@ -1,5 +1,6 @@
 <div class="form-group">
-    <h1>Add User</h1>
+    <h1 >Edit User</h1>
+    <p class="SuccessMsg" *ngIf="SuccessMsg">Data successfully submitted</p>
     <label for="Id" class="col-2">Indentification number</label>
     <input name="Id" type="text" class="form-control" #idField [(ngModel)]="employee.id"> <br>
     <p *ngIf="idField.value===''" class="ErrorMsg">Id is Required</p>
@@ -12,9 +13,11 @@
     <label for="Age" class="col-2">Age</label>
     <input name="Age" class="form-control" #ageField [(ngModel)]="employee.age"><br>
     <p *ngIf="ageField.value===''" class="ErrorMsg">Age is Required</p>
+    <p class="ErrorMsg" *ngIf="idExists">Id already exist</p>
     <div>
-        <button class="btn btn-primary"
-            (click)="submit({id: idField.value, firstName: firstNameField.value, lastName: lastNameField.value, age: ageField.value })">Submit</button>
+        <button
+            (click)="submit(employee)"
+            class="btn btn-primary">Submit</button>
     </div>
     <div>
         <button class="btn btn-primary mt-3" routerLink="/employee">Back</button>

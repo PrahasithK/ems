@@ -6,12 +6,16 @@ import { EmpListComponent } from './emp-list/emp-list.component';
 import { AddUsersComponent } from './add-users/add-users.component';
 import { EmployeeDataService } from './employee-data.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditUsersComponent } from './edit-users/edit-users.component';
+
 
 
 @NgModule({
   declarations: [
     EmpListComponent,
-    AddUsersComponent
+    AddUsersComponent,
+    EditUsersComponent,
+   
   ],
   imports: [
     CommonModule,
